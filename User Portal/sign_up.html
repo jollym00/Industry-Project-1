@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+  </head>
+  <body>
+    <h1> SIGN UP </h1>
+    <form action="php/completeSingup.php" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" name="name"><br><br>
+
+        <label for="email">Email ID:</label>
+        <input type="text"  name="email"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password"><br>
+
+        <label for="company">Company Name:</label>
+        <input type="text"  name="company"><br><br>
+
+        <p>Yearly / Monthly payment</p>
+        <input type="radio" id="yearly" name="payment" value="Yearly">
+        <label for="Yearly">Yearly</label>
+        <input type="radio" id="Monthly" name="payment" value="Monthly">
+        <label for="Monthly">Monthly</label><br>
+        <p>Auto Renew</p>
+        <input type="radio" id="yes" name="AutoRenew" value="yes">
+        <label for="yes">yes</label>
+        <input type="radio" id="no" name="AutoRenew" value="no">
+        <label for="no">no</label> <br><br>
+
+        <input type="submit" value="Submit">
+    </form> 
+
+
+  </body>
+</html>

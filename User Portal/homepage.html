@@ -9,20 +9,17 @@
 
 <body>
 	<nav>
-		<a href=""> </a>
-		<a href=""> </a>
-		<a href=""> </a>
-		<a href=""> </a>
+		<a href="account.php"><button type="button" name="AccountBtn" id="AccountBtn">Account</button> </a>
+		<a href=""><button type="button" name="AboutBtn" id="AboutBtn">About</button> </a>
+		<a href="login.php"><button type="button" name="LoginBtn" id="LoginBtn">Logout</button></a>
 	</nav>
-
-    <button type="button" name="AccountBtn" id="AccountBtn">Account</button>
-    <button type="button" name="AboutBtn" id="AboutBtn">About</button>
-    <button type="button" name="LoginBtn" id="LoginBtn">Logout</button>
 
     <div class="">
         <h4>Legislation Search</h4>
-        <input type="text" placeholder="Search.." name="search" id="search" >
-        <button type="submit"></button>
+		<form method="post" action="search_result.php">
+			<input type="text" placeholder="Search.." name="search" required>
+        	<button type="submit"> Search</button>
+		</form>
     </div>
 
 

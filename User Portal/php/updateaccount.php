@@ -13,7 +13,7 @@
                 
         if ($con->query($sql) === TRUE) {
           echo "Record updated successfully";
-          header("Location: ../account.php");
+          header("Location: ../EditAccount.php");
           } 
       ?>  
     </div

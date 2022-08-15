@@ -11,7 +11,7 @@
 	$ga = new PHPGangsta_GoogleAuthenticator();
 	$result = $ga->verifyCode($secret, $code, 3);
 	if ($result == 1){
-		header("Location: ../homepage.html");
+		header("Location: ../search.html");
 	}
 	else {
 		echo "TRY again";

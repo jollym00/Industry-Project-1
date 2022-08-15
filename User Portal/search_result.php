@@ -20,7 +20,7 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			  <div class="navbar-nav">
 				<div class="d-flex justify-content-between">
-					<a class="nav-link" href="homepage.html" >Legislation Search</a>
+					<a class="nav-link" href="search.html" >Legislation Search</a>
 					<a class="nav-link" href="SubcribeUnsubcribe.php" >My Legislations</a>
 					<a class="nav-link" href="EditAccount.php" >Account</a>
 					<a class="nav-link" href="login.php">Sign Out</a>
@@ -37,9 +37,10 @@
             include('php/connection.php'); 
             echo "<div class='d-flex justify-content-center'>";
         session_start();
-        $id = 1;
-        $search = 45;
-        $sql = "SELECT * FROM search where LegNum=$search  ;" ;
+        $id = $_SESSION['ID'];
+        $search = $_POST['Search'];
+        $sql = "SELECT * FROM search where Act like '%$search%' or Division like '%$search%' or LegNum like '%$search%' or 
+        LegName like '%$search%' or Content like '%$search%' or AniRec like '%$search%'" ;
         if($result = mysqli_query($con, $sql)){
             if(mysqli_num_rows($result) > 0){
                 echo "<table id='searchresults' class='table table-striped'>";

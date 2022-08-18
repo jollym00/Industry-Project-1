@@ -5,8 +5,8 @@
 	$username = 'admin';
 	$password = 'Melwinjolly';  
       
-    $con = new mysqli($dbhost, $username, $password, $dbname, $dbport);
-     if ($con->connect_error) {
+    $conn = new mysqli($dbhost, $username, $password, $dbname, $dbport);
+     if ($conn->connect_error) {
 	  die("Connection failed: " . $con->connect_error);
 	}
 ?>  

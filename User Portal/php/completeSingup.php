@@ -60,8 +60,8 @@
 		$_SESSION['ClinetID'] = $last_id;
 
 		
-		echo "<div class=""parent container d-flex justify-content-center align-items-center "">";
-		echo "<div class=""row d-flex justify-content-center"">";
+		echo "<div class='parent container d-flex justify-content-center align-items-center '>";
+		echo "<div class='row d-flex justify-content-center'>";
 		include('RegisterAuthentication.php'); 
 		
 

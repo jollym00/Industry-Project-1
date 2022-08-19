@@ -73,7 +73,7 @@
               mysqli_free_result($result);
           } 
           else{
-              echo "No records matching your query were found.";
+              echo "No subscriptions found for";
           }
       }
   

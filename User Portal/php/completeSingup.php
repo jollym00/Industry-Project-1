@@ -59,11 +59,11 @@
 		$last_id = mysqli_insert_id($con);
 		$_SESSION['ClinetID'] = $last_id;
 
-		echo "<div class='mb-3'>";
+		
+		echo "<div class=""parent container d-flex justify-content-center align-items-center "">";
+		echo "<div class=""row d-flex justify-content-center"">";
 		include('RegisterAuthentication.php'); 
-		echo "</div>";
-
-		echo "<div class='mb-3'>";
+		
 
 		if ($AutoRenew == "no" && $txtPayment =="yearly"){
 			echo "<table class='table table-striped'>
@@ -203,6 +203,7 @@
 
 		}
 				
+		echo "</div>";
 		echo "</div>";
 
 		?>

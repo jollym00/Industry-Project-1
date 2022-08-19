@@ -1,5 +1,5 @@
 <?php
-	require_once '../PHPGangsta/GoogleAuthenticator.php';
+	require_once 'PHPGangsta/GoogleAuthenticator.php';
 	include('connection.php');
 	session_start();
 	$id = $_SESSION['ID'];

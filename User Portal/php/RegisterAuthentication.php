@@ -1,6 +1,6 @@
 <?php
 	require_once 'PHPGangsta/GoogleAuthenticator.php';
-	include('php/connection.php'); 
+	include('connection.php'); 
 	$ga = new PHPGangsta_GoogleAuthenticator();
 	$secret = $ga->createsecret();
 	echo "<p> Download Google Authenticator app on 

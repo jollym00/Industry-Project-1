@@ -29,8 +29,6 @@
 			</div>
 		  </div>
 	</nav>
-		<br>
-		<br>
 	<div>
 		<?php
 		include('connection.php');  

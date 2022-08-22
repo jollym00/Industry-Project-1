@@ -1,7 +1,6 @@
 <?php 	
         include('connection.php');
         session_start();
-        $_SESSION['ID'] = 0;
           
         $username = $_POST['Email'];  
         $password = $_POST['Password'];  

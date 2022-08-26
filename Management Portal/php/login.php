@@ -18,7 +18,7 @@
                 
         if($count == 1){
           $_SESSION['ID'] = $row["UserID"];
-          header("Location: ../authentication.php");
+          header("Location: ../authentication.html");
         }
         else{
             header("Location: ../login.php");

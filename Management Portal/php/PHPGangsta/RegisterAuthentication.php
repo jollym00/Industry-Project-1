@@ -19,7 +19,7 @@
 	
 	$myCode = $ga->getCode($secret);
 	$result = $ga->verifyCode($secret, $myCode, 3);
-	$ClinetID = $_SESSION['ClinetID'];
-	$sql = "UPDATE `customer`  SET `GoogleCode`='$secret' where `ClinetID`= '$ClinetID'";
+	$userID = $_SESSION['userID'];
+	$sql = "UPDATE `managementUser`  SET `GoogleCode`='$secret' where `userID`= '$userID'";
 	$rs = mysqli_query($con, $sql); 
 ?>

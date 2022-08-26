@@ -45,7 +45,7 @@
 		if ($verification == 12345){
 			$sql = "INSERT INTO `managementUser`(`Full Name`, `Email`, `Password`, `Phone`, `Role`, `verification`, `Active`, `GoogleCode`)
 							VALUES ('$txtName', '$txtEmail', '$txtPassword', '$txtPhone', '$role', '$verification', 'Active', 'null' )";
-
+							
 			// Change active to Inactive once the website is deployed
 			$rs = mysqli_query($con, $sql);
 			$last_id = mysqli_insert_id($con);

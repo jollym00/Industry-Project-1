@@ -31,8 +31,74 @@
 	</nav> 
 	<br>
 	<br>
+    
+        <?php
+         
+            include('php/connection.php'); 
+            echo "<div class='d-flex justify-content-center'>";
+        session_start();
+        $id = $_SESSION['ID'];
+        $search = $_POST['Search'];
+        $sql = "SELECT * FROM legislation where Act like '%$search%' or Division like '%$search%' or LegNum like '%$search%' or 
+        LegName like '%$search%' or Content like '%$search%' or AniRec like '%$search%'" ;
+        if($result = mysqli_query($con, $sql)){
+            if(mysqli_num_rows($result) > 0){
+                echo "<table id='searchresults' class='table table-striped'>";
+                    echo "<tr>";
+                        echo "<th>Act</th>";
+                        echo "<th>Division</th>";
+                        echo "<th>Legislation Num</th>";
+                        echo "<th>Legislation Name</th>";
+                        echo "<th>Content</th>";
+                        echo "<th>Anitech Reccomendation</th>";
+                        echo "<th></th>";
+                        echo "<th> </th>";
+                    echo "</tr>";
+                while($row = mysqli_fetch_array($result)){
+                    echo "<tr>";
+                    
+                        echo "<td>" . $row['Act'] . "</td>";
+                        echo "<td>" . $row['Division'] . "</td>";
+                        echo "<td>" . $row['LegNum'] . "</td>";
+                        echo "<td>" . $row['LegName'] . "</td>";
+                        echo "<td>" . $row['Content'] . "</td>";
+                        echo "<td>" . $row['AniRec'] . "</td>";
+                        $lawid = $row['legislationID'];
+                        $sql1="SELECT * FROM Subscription where ClinetID = '$id' and LawID ='$lawid'";
+                        $Sub = mysqli_query($con, $sql1);
+                        $count = mysqli_num_rows($Sub);
 
-	<!-- php code -->
+						
+                            echo "<td> <form method='post' action='php/Unsubscribe.php'>
+                            <input type='number' name='clientID' value=$id hidden>
+                            <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
+                            <input type='submit' value='Edit'> 
+                            </form> <td>";
+                            echo "<td> <form method='post' action='php/Subscribe.php'>
+                            <input type='number' name='clientID' value=$id hidden>
+                            <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
+                            <input type='submit' value='Delete'> 
+                            </form> <td>";
+                        
+
+                        
+                        
+                        
+                    echo "</tr>";
+                }
+                echo "</table>";
+                mysqli_free_result($result);
+            } 
+            else{
+                echo "Your search - $search - did not match any documents.";
+            }
+        }
+
+
+        mysqli_close($con);
+        echo "</div>";
+        ?>
+    
 
 </body>
 </html>

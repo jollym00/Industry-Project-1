@@ -69,7 +69,7 @@
                         $count = mysqli_num_rows($Sub);
 
 						
-                            echo "<td> <form method='post' action='php/Unsubscribe.php'>
+                            echo "<td> <form method='post' action='editlegislation.php'>
                             <input type='number' name='clientID' value=$id hidden>
                             <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
                             <input type='submit' value='Edit'> 

@@ -42,7 +42,7 @@
 		$role = $_POST['role'];
 		$verification = $_POST['verification'];
 
-		if ($verification == 12345){
+		if (($role == "superadmin" && $verification == 112233) || ($role == "finance" && $verification == 445566) || ($role == "consultant" && $verification == 778899)){
 			$sql = "INSERT INTO `managementUser`(`Full Name`, `Email`, `Password`, `Phone`, `Role`, `verification`, `Active`, `GoogleCode`)
 							VALUES ('$txtName', '$txtEmail', '$txtPassword', '$txtPhone', '$role', '$verification', 'Active', 'null' )";
 							
@@ -57,9 +57,9 @@
 			include('RegisterAuthentication.php'); 
 			echo "</div>";
 			echo "</div>";
-
+		
 		}
-			else {
+		else {
 				echo "<p>Account cannot be created due to invalid verification number <a href='../sign_up.html'> go back</a></p>";
 		}
 

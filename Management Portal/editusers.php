@@ -36,12 +36,48 @@
         
       <div class="row d-flex justify-content-center">
         <h4>Edit User</h4>
-       
+		<form action="php/updateaccount.php" method="get" >
+		<?php 	
+                include('php/connection.php');
+                session_start();
+                $id = $_GET['ClinetID'];
+                $sql = "select * from customer where ClinetID = $id";
+                $result = mysqli_query($con, $sql);  
+                while ($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+		    ?>
+			<div>
+				<input type='text' name="ClinetID" value="<?php echo $row1['ClinetID']; ?>"/>
+				</div>
+            <div class="mb-3">
+			  <label for="username" class="form-label">Username</label>
+			  <input type="username" class="form-control" name="FullName" value="<?php echo $row1['Full Name']; ?>">
+			</div>
+
+            <div class="mb-3">
+				<label for="email" class="form-label">Email address</label>
+				<input type="email" class="form-control" name="email" value="<?php echo $row1['Email']; ?>">
+			</div>
+
+            <div class="mb-3">
+				<label for="phone" class="form-label">Phone</label>
+				<input type="text" class="form-control" name="MobilePhone" value="<?php echo $row1['MobilePhone']; ?>">
+			</div>
+
+			<div class="mb-3">
+				<label for="company" class="form-label">Company Name</label>
+				<input type="text" class="form-control" name="company" value="<?php echo $row1['Company']; ?>">
+			</div>
+
+
+
+			<button id="updateBtn" type="submit" class="btn btn-primary">Update Account Details</button>
+            <?php } ?>
+				</form>
     </div>
         <br>
     
           
-          </form>
+    
       </div>
     </div>
 

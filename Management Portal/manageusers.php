@@ -50,12 +50,15 @@
 	include('php/connection.php');
 		echo "<div class='d-flex justify-content-center'>";
 	session_start();
-	$sql = "SELECT * FROM 'customer';" ;
+	$sql = "SELECT * FROM customer;" ;
 	if($result = mysqli_query($con, $sql)){
 		if(mysqli_num_rows($result) > 0){
             echo "<table id='customer' class='table table-striped'>";
                   echo "<tr>";
-                      echo "<th>Name</th>";
+                      echo "<th>Client ID</th>";
+					  echo "<th>Delete</th>";
+					  echo "<th>Edit</th>";
+				  	  echo "<th>Name</th>";
                       echo "<th>Email</th>";
                       echo "<th>Company</th>";
                       echo "<th>Payment</th>";
@@ -68,6 +71,9 @@
 				while($row = mysqli_fetch_array($result)){
 					echo "<tr>";
 			
+					echo "<td>" . $row['ClinetID'] . "</td>";
+					echo "<td>". $row['ClinetID'] . "<br /><a href=\"php/deleteuser.php?ClinetID={$row['ClinetID']}\">Delete Row</a></td>";
+					echo "<td>". $row['ClinetID'] . "<br /><a href=\"editusers.php?ClinetID={$row['ClinetID']}\">Edit Row</a></td>";
 					echo "<td>" . $row['Full Name'] . "</td>";
 					echo "<td>" . $row['Email'] . "</td>";
 					echo "<td>" . $row['Company'] . "</td>";
@@ -75,13 +81,8 @@
 					echo "<td>" . $row['Renew'] . "</td>";
 					echo "<td>" . $row['Active'] . "</td>";
 					echo "<td>" . $row['DateExpiery'] . "</td>";
-					echo "<td> <form method ='post' action ='editusers.php'>
-						<input type='submit' value='Edit User'>
-						</form> <td>";
-					echo "<td> <form method ='post' action ='deleteusers.php'>
-					<input type='submit' value='Delete'>
-					</form> <td>";
-
+		
+					
 					echo "</tr>";
 				}
 				echo "</table>";

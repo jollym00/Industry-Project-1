@@ -2,9 +2,9 @@
 	require_once 'PHPGangsta/GoogleAuthenticator.php';
 	include('connection.php');
 	session_start();
-	$id = $_SESSION['ID'];
+	$id = $_SESSION['idmanagementUser'];
     //database table for management users
-	$sql = "SELECT `GoogleCode` FROM `managementUser` where UserID = '$id'";  
+	$sql = "SELECT `GoogleCode` FROM `managementUser` where idmanagementUser = '$id'";  
 	$a = mysqli_query($con, $sql);  
 	$row = mysqli_fetch_array($a, MYSQLI_ASSOC);
 	$secret = $row["GoogleCode"];

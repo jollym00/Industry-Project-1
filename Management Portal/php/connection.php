@@ -1,5 +1,5 @@
 <?php      
-    $dbhost = 'complianceplus.czttwoa6dtht.us-west-1.rds.amazonaws.com';
+    $dbhost = 'complianceplus.c9xxg5e4cdce.us-east-1.rds.amazonaws.com';
 	$dbport = '3306';
 	$dbname = 'complianceplus';
 	$username = 'admin';

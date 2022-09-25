@@ -16,7 +16,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<?php 	
     session_start();
-    if ( $_SESSION['Active'] == NULL){
+    if ( $_SESSION['Active'] = NULL){
         header("Location: stafflogin.html");
     
     }
@@ -104,81 +104,56 @@
 <div class="d-flex justify-content-center">
     <div class="row d-flex justify-content-center">
 		<h4>Add New Legislation</h4>
-		<form method="post" >
-        <?php 	
-                include('php/connection.php');
-                $id = $_POST['LawID'];
-                $_SESSION['LawID'] = $id;
-                $sql = "select * from legislation where legislationID = $id";
-                $result = mysqli_query($con, $sql);  
-                while ($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-		?>
-        <input type='number' name='LawID' value="<?php echo $row1['legislationID']; ?>" hidden>
+		<form method="post">
 			<div class="mb-3">
 				<label for="name" class="form-label">Act</label>
-				<input type="name" class="form-control" name="Act" value="<?php echo $row1['Act']; ?>">
+				<input type="name" class="form-control" name="Act">
 		  	</div>
 		  	<div class="mb-3">
 				<label for="text" class="form-label">Division</label>
-				<input type="text" class="form-control" name="Division" value="<?php echo $row1['Division']; ?>">
+				<input type="text" class="form-control" name="Division">
 		  	</div>
 		  	<div class="mb-3">
 				<label for="text" class="form-label">Legislation Number</label>
-				<input type="text" class="form-control" name="LegNum" value="<?php echo $row1['LegNum']; ?>">
+				<input type="text" class="form-control" name="LegNum">
 		  	</div>
 			<div class="mb-3">
 				<label for="text" class="form-label">Legislation Name</label>
-				<input type="text" class="form-control" name="LegName" value="<?php echo $row1['LegName']; ?>">
+				<input type="text" class="form-control" name="LegName">
 		  	</div>
 			<div class="mb-3">
 				<label for="text" class="form-label">Content</label>
-				<input type="text" class="form-control" name="content" id="textboxid" value="<?php echo $row1['Content']; ?>">
+				<input type="text" class="form-control" name="content" id="textboxid">
 		  	</div>
 			  <div class="mb-3">
 				<label for="text" class="form-label">Anitech Reccomendation</label>
-				<input type="text" class="form-control" name="AniRec" id="textboxid" value="<?php echo $row1['AniRec']; ?>">
+				<input type="text" class="form-control" name="AniRec" id="textboxid">
 		  	</div>	
-          <button id="signupBtn" type="submit" class="btn btn-primary">Update</button>
+          <button id="signupBtn" type="submit" class="btn btn-primary">SignUp</button>
           <br>
 		  <br>
 		  <br>
-          <?php } ?>
 		</form>
 		  
       </div>
     </div>
-    <div>
-    <?php
+
+	<div hidden>
+		<?php
 		include('php/connection.php');  
+		if(isset($_POST)){
 			$Act = $_POST['Act'];
 			$Division = $_POST['Division'];
 			$LegNum = $_POST['LegNum'];
 			$LegName = $_POST['LegName'];
 			$content = $_POST['content'];
 			$AniRec = $_POST['AniRec'];
-            $legislationID = $_POST['LawID'];
 
-			$sql = "UPDATE legislation
-            SET
-            `Act` = '$Act',
-            `Division` = '$Division',
-            `LegNum` = '$LegNum',
-            `LegName` = '$LegName',
-            `Content` = '$content',
-            `AniRec` = '$AniRec'
-            WHERE `legislationID` = '$legislationID'";
+			$sql = "INSERT INTO legislation (`Act`,`Division`,`LegNum`,`LegName`,`Content`,`AniRec`) VALUES ('$Act', '$Division', '$LegNum', '$LegName', '$content', '$AniRec')";
 			$rs = mysqli_query($con, $sql);
-
-
-            if ($con->query($sql) === TRUE) {
-                echo '<script>alert("Record updated successfully")</script>';
-                header("Location: homepage.php");
-                } 
+		}
 		?>
-
-
-
-    </div>
+	</div>
 
 
 

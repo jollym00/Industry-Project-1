@@ -88,53 +88,30 @@
 
 <?php
     }
+
+
+
+
     ?> 
+
 <br>
-<?php
-         
-    include('php/connection.php'); 
-    echo "<div class='d-flex justify-content-center'>";
-     $search = $_POST['search'];
-     $sql = "SELECT * FROM legislation where Act like '%$search%' or Division like '%$search%' or LegNum like '%$search%' or 
-     LegName like '%$search%' or Content like '%$search%' or AniRec like '%$search%'" ;
-    if($result = mysqli_query($con, $sql)){
-        if(mysqli_num_rows($result) > 0) {
-            echo "<table id='searchresults' class='table table-striped'>";
-            echo "<tr>";
-            echo "<th>Act</th>";
-            echo "<th>Division</th>";
-            echo "<th>Legislation Num</th>";
-            echo "<th>Legislation Name</th>";
-            echo "<th>Content</th>";
-            echo "<th>Anitech Reccomendation</th>";
-            echo "<th></th>";
-            echo "</tr>";
-            while($row = mysqli_fetch_array($result)){
-                echo "<tr>";
-                echo "<td>" . $row['Act'] . "</td>";
-                echo "<td>" . $row['Division'] . "</td>";
-                echo "<td>" . $row['LegNum'] . "</td>";
-                echo "<td>" . $row['LegName'] . "</td>";
-                echo "<td>" . $row['Content'] . "</td>";
-                echo "<td>" . $row['AniRec'] . "</td>";
-                echo "<td> <form method='post' action='editlegislation.php'>
-                        <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
-                        <input type='submit' value='Edit'> 
-                        </form>
-                     <td>";
-                echo "</tr>";
-            }
-            echo "</table>";
-        
-        }        
-        else {
-            echo "Your search - $search - did not match any documents.";
-        }
-        mysqli_free_result($result);
-    }
-    mysqli_close($con);
-    echo "</div>";
-?>
+
+    
+    <div class="d-flex justify-content-center" style="height: 200px">
+		<div div class="row d-flex justify-content-center">
+			<h3>Search Legislations</h3>
+			<form method="post" action="search_result.php">
+				<div class="mb-3">
+					<input type="text" class="form-control" name="search" placeholder="Search ...">
+				</div>				
+				<button id="searchBtn" type="submit" class="btn btn-primary">Search</button> <br>
+			</form>                   
+             
+    	</div>
+
+
+	</div>
+    
 
 </body>
 </html>

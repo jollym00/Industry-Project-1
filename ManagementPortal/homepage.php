@@ -7,9 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link href="css/main.css" rel="stylesheet">
-	<style>	#stafflogin {position:absolute;	right: 10px;}
-			#textboxid{ height:150px;  font-size:11pt;}</style>
-
+	<style>	#stafflogin {position:absolute;	right: 10px;}</style>
 </head>
 
 <body class="pgBody">
@@ -82,7 +80,7 @@
 			</div>
 		  </div>
 	  </nav>
-	  
+
 
 <?php
     }
@@ -92,66 +90,18 @@
 
     ?> 
 
-		
-<br>
-		<br>
+
+
 
     
-<div class="d-flex justify-content-center">
-    <div class="row d-flex justify-content-center">
-		<h4>Add New Legislation</h4>
-		<form method="post">
-			<div class="mb-3">
-				<label for="name" class="form-label">Act</label>
-				<input type="name" class="form-control" name="Act">
-		  	</div>
-		  	<div class="mb-3">
-				<label for="text" class="form-label">Division</label>
-				<input type="text" class="form-control" name="Division">
-		  	</div>
-		  	<div class="mb-3">
-				<label for="text" class="form-label">Legislation Number</label>
-				<input type="text" class="form-control" name="LegNum">
-		  	</div>
-			<div class="mb-3">
-				<label for="text" class="form-label">Legislation Name</label>
-				<input type="text" class="form-control" name="LegName">
-		  	</div>
-			<div class="mb-3">
-				<label for="text" class="form-label">Content</label>
-				<input type="text" class="form-control" name="content" id="textboxid">
-		  	</div>
-			  <div class="mb-3">
-				<label for="text" class="form-label">Anitech Reccomendation</label>
-				<input type="text" class="form-control" name="AniRec" id="textboxid">
-		  	</div>	
-          <button id="signupBtn" type="submit" class="btn btn-primary">SignUp</button>
-          <br>
-		  <br>
-		  <br>
-		</form>
-		  
-      </div>
-    </div>
-
-	<div hidden>
-		<?php
-		include('php/connection.php');  
-		if(isset($_POST)){
-			$Act = $_POST['Act'];
-			$Division = $_POST['Division'];
-			$LegNum = $_POST['LegNum'];
-			$LegName = $_POST['LegName'];
-			$content = $_POST['content'];
-			$AniRec = $_POST['AniRec'];
-
-			$sql = "INSERT INTO legislation (`Act`,`Division`,`LegNum`,`LegName`,`Content`,`AniRec`) VALUES ('$Act', '$Division', '$LegNum', '$LegName', '$content', '$AniRec')";
-			$rs = mysqli_query($con, $sql);
-		}
-		?>
+	<div class="parent container d-flex justify-content-center align-items-center ">
+		<div class="row d-flex justify-content-center">
+			<h1>Welcome to Lahebo Management Portal</h1>
+			<p><a href="login.html">Login</a> or <a href="stafflogin.html">Sign Up</a> Now</p>
+		</div>
+	
 	</div>
-
-
+    
 
 </body>
 </html>

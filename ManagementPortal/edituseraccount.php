@@ -7,12 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link href="css/main.css" rel="stylesheet">
-	<style>	#stafflogin {position:absolute;	right: 10px;}
-			#textboxid{ height:150px;  font-size:11pt;}</style>
-
+	<style>	#stafflogin {position:absolute;	right: 10px;}</style>
 </head>
 
-<body class="pgBody">
+<body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<?php 	
     session_start();
@@ -82,73 +80,79 @@
 			</div>
 		  </div>
 	  </nav>
-	  
+
 
 <?php
     }
-
-
-
-
     ?> 
-
-		
 <br>
-		<br>
-
-    
 <div class="d-flex justify-content-center">
-    <div class="row d-flex justify-content-center">
-		<h4>Add New Legislation</h4>
-		<form method="post">
-			<div class="mb-3">
-				<label for="name" class="form-label">Act</label>
-				<input type="name" class="form-control" name="Act">
-		  	</div>
-		  	<div class="mb-3">
-				<label for="text" class="form-label">Division</label>
-				<input type="text" class="form-control" name="Division">
-		  	</div>
-		  	<div class="mb-3">
-				<label for="text" class="form-label">Legislation Number</label>
-				<input type="text" class="form-control" name="LegNum">
-		  	</div>
-			<div class="mb-3">
-				<label for="text" class="form-label">Legislation Name</label>
-				<input type="text" class="form-control" name="LegName">
-		  	</div>
-			<div class="mb-3">
-				<label for="text" class="form-label">Content</label>
-				<input type="text" class="form-control" name="content" id="textboxid">
-		  	</div>
-			  <div class="mb-3">
-				<label for="text" class="form-label">Anitech Reccomendation</label>
-				<input type="text" class="form-control" name="AniRec" id="textboxid">
-		  	</div>	
-          <button id="signupBtn" type="submit" class="btn btn-primary">SignUp</button>
-          <br>
-		  <br>
-		  <br>
-		</form>
-		  
-      </div>
-    </div>
+        
+      <div class="row d-flex justify-content-center">
 
-	<div hidden>
-		<?php
-		include('php/connection.php');  
-		if(isset($_POST)){
-			$Act = $_POST['Act'];
-			$Division = $_POST['Division'];
-			$LegNum = $_POST['LegNum'];
-			$LegName = $_POST['LegName'];
-			$content = $_POST['content'];
-			$AniRec = $_POST['AniRec'];
-
-			$sql = "INSERT INTO legislation (`Act`,`Division`,`LegNum`,`LegName`,`Content`,`AniRec`) VALUES ('$Act', '$Division', '$LegNum', '$LegName', '$content', '$AniRec')";
-			$rs = mysqli_query($con, $sql);
-		}
+		<h4>Edit User Account</h4>
+        <?php 	
+                include('php/connection.php');
+                $id = $_POST['ClinetID'];
+                $_SESSION['ClinetID'] = $id;
+                $sql = "select * from customer where ClinetID = $id";
+                $result = mysqli_query($con, $sql);  
+                while ($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 		?>
+          <div class="row d-flex justify-content-center">
+        <form method="post" action="php/edituseraccount.php">
+        <div class="mb-3">
+        <input type='number' name='ClinetID' value="<?php echo $row1['ClinetID']; ?>" hidden>
+          <label for="name" class="form-label">Full Name</label>
+          <input type="name" class="form-control" name="name" value="<?php echo $row1['Full Name']; ?>">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" value="<?php echo $row1['Email']; ?>">
+        </div>
+        <div class="mb-3">
+          <label for="Password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" value="<?php echo $row1['Password']; ?>">
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="text" class="form-control" name="phone" value="<?php echo $row1['MobilePhone']; ?>">
+        </div>
+        <div class="mb-3">
+          <label for="company" class="form-label">Company Name</label>
+          <input type="text" class="form-control" name="company" value="<?php echo $row1['Company']; ?>">
+        </div>
+
+        <div class="mb-3">
+            <label for="Active">Active:</label>
+            <select name="Active" >
+                <option value="Active"
+                <?php if($row1['Active'] = 'Active' ){
+            echo "selected'";
+
+          } ?>
+                >Active</option>
+                <option value="Deactive"<?php if($row1['Active'] = 'Deactive' ){
+            echo "selected'";
+
+          } ?>
+                
+                
+                >Deactivate</option>
+            </select>
+        </div>
+        
+		  <br>
+		  <br>
+
+         <button id="signupBtn" type="submit" class="btn btn-primary" value="submit">Update</button>
+		  <br>
+		  <br>
+          <?php } ?>
+		</form>
+        </div>
+        </div>
+        <div>
 	</div>
 
 

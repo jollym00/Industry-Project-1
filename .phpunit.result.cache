@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":318:{a:2:{s:7:"defects";a:4:{s:7:"Warning";i:6;s:26:"LaheboTest::testgetDetails";i:4;s:22:"Lahebo::testgetDetails";i:4;s:27:"AccountTest::testgetDetails";i:4;}s:5:"times";a:4:{s:7:"Warning";d:0.162;s:26:"LaheboTest::testgetDetails";d:0.002;s:22:"Lahebo::testgetDetails";d:0.002;s:27:"AccountTest::testgetDetails";d:0.004;}}}

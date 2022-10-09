@@ -8,6 +8,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link href="css/main.css" rel="stylesheet">
 	<style>	#stafflogin {position:absolute;	right: 10px;}</style>
+  <script src = "script/validation.js" ></script>
 </head>
 
 <body>
@@ -100,27 +101,32 @@
                 while ($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 		?>
           <div class="row d-flex justify-content-center">
-        <form method="post" action="php/editstaff.php">
+        <form method="post" action="php/editstaff.php" id="EditStaff">
         <div class="mb-3">
         <input type='number' name='idmanagementUser' value="<?php echo $row1['idmanagementUser']; ?>" hidden>
           <label for="name" class="form-label">Full Name</label>
-          <input type="name" class="form-control" name="name" value="<?php echo $row1['Full_Name']; ?>">
+          <input type="name" class="form-control" name="name" id="name" value="<?php echo $row1['Full_Name']; ?>">
+          <span id = "nameErr" class="hideSpan"></span>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" name="email" value="<?php echo $row1['Email']; ?>">
+          <input type="email" class="form-control" name="email" id="email" value="<?php echo $row1['Email']; ?>">
+          <span id = "emailErr" class="hideSpan"></span>
         </div>
         <div class="mb-3">
           <label for="Password" class="form-label">Password</label>
-          <input type="password" class="form-control" name="password" value="<?php echo $row1['Password']; ?>">
+          <input type="password" class="form-control" name="password" id="password1" value="<?php echo $row1['Password']; ?>">
+          <span id = "pwd1Err" class="hideSpan"></span>
         </div>
         <div class="mb-3">
           <label for="phone" class="form-label">Phone</label>
-          <input type="text" class="form-control" name="phone" value="<?php echo $row1['Phone']; ?>">
+          <input type="text" class="form-control" name="phone" id="phone" value="<?php echo $row1['Phone']; ?>">
+          <span id = "phoneErr" class="hideSpan"></span>
         </div>
         <div class="mb-3">
           <label for="verification" class="form-label">User Verification Number</label>
-          <input type="text" class="form-control" name="verification">
+          <input type="text" class="form-control" name="verification" id="verification">
+          <span id = "uservErr" class="hideSpan"></span>
         </div>
 
         <div class="mb-3">

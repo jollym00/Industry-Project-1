@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link href="css/main.css" rel="stylesheet">
+	<script src = "script/validation.js" ></script>
 	<style>	#stafflogin {position:absolute;	right: 10px;}
 			#textboxid{ height:150px;  font-size:11pt;}</style>
 
@@ -100,7 +101,7 @@
 <div class="d-flex justify-content-center">
     <div class="row d-flex justify-content-center">
 		<h4>Add New Legislation</h4>
-		<form method="post" >
+		<form method="post" id="Legislation">
         <?php 	
                 include('php/connection.php');
                 $id = $_POST['LawID'];
@@ -112,23 +113,28 @@
         <input type='number' name='LawID' value="<?php echo $row1['legislationID']; ?>" hidden>
 			<div class="mb-3">
 				<label for="name" class="form-label">Act</label>
-				<input type="name" class="form-control" name="Act" value="<?php echo $row1['Act']; ?>">
+				<input type="name" class="form-control" name="Act" id="act" value="<?php echo $row1['Act']; ?>">
+				<span id = "actErr" class="hideSpan"></span>
 		  	</div>
 		  	<div class="mb-3">
 				<label for="text" class="form-label">Division</label>
-				<input type="text" class="form-control" name="Division" value="<?php echo $row1['Division']; ?>">
+				<input type="text" class="form-control" name="Division" id="division" value="<?php echo $row1['Division']; ?>">
+				<span id = "divisionErr" class="hideSpan"></span>
 		  	</div>
 		  	<div class="mb-3">
 				<label for="text" class="form-label">Legislation Number</label>
-				<input type="text" class="form-control" name="LegNum" value="<?php echo $row1['LegNum']; ?>">
+				<input type="text" class="form-control" name="LegNum" id="legnum" value="<?php echo $row1['LegNum']; ?>">
+				<span id = "legnumErr" class="hideSpan"></span>
 		  	</div>
 			<div class="mb-3">
 				<label for="text" class="form-label">Legislation Name</label>
-				<input type="text" class="form-control" name="LegName" value="<?php echo $row1['LegName']; ?>">
+				<input type="text" class="form-control" name="LegName" id="legname" value="<?php echo $row1['LegName']; ?>">
+				<span id = "legnameErr" class="hideSpan"></span>
 		  	</div>
 			<div class="mb-3">
 				<label for="text" class="form-label">Content</label>
-				<input type="text" class="form-control" name="content" id="textboxid" value="<?php echo $row1['Content']; ?>">
+				<input type="text" class="form-control" name="content" id="content" value="<?php echo $row1['Content']; ?>">
+				<span id = "contentErr" class="hideSpan"></span>
 		  	</div>
 			  <div class="mb-3">
 				<label for="text" class="form-label">Anitech Reccomendation</label>

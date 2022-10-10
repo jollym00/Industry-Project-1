@@ -14,6 +14,9 @@
 		header("Location: ../search.html");
 	}
 	else {
-		echo "TRY again";
+		echo '<script type="text/javascript"> 
+				alert("Authentication failed. Try Again"); 
+				window.location = "../login.php";
+			</script>';
 	}
 ?>

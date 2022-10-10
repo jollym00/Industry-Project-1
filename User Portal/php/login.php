@@ -21,6 +21,9 @@
           header("Location: ../authenticaation.php");
         }
         else{
-            header("Location: ../login.php");
-        }
+            echo '<script type="text/javascript"> 
+                    alert("Invalid User Credentials!"); 
+                    window.location = "../login.php";
+                  </script>';
+          }
 ?>  

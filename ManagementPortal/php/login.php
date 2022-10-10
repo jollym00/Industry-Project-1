@@ -24,11 +24,17 @@
             header("Location: ../authenticaation.php");
           }
           else {
-            header("Location: ../stafflogin.html");
+            echo '<script type="text/javascript"> 
+                    alert("Account is inactive!"); 
+                    window.location = "../login.php";
+                  </script>';
           }
          
         }
         else{
-            header("Location: ../stafflogin.html");
+          echo '<script type="text/javascript"> 
+                  alert("Invalid User Credentials!"); 
+                  window.location = "../login.php";
+                </script>';
         }
 ?> 

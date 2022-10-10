@@ -17,7 +17,7 @@
 	else {
 		echo '<script type="text/javascript"> 
 				alert("Authentication failed. Try Again"); 
-				window.location = "../login.php";
+				window.location = "../stafflogin.html";
 			</script>';
 	}
 ?>

@@ -26,7 +26,7 @@
           else {
             echo '<script type="text/javascript"> 
                     alert("Account is inactive!"); 
-                    window.location = "../login.php";
+                    window.location = "../stafflogin.html";
                   </script>';
           }
          
@@ -34,7 +34,7 @@
         else{
           echo '<script type="text/javascript"> 
                   alert("Invalid User Credentials!"); 
-                  window.location = "../login.php";
+                  window.location = "../stafflogin.html";
                 </script>';
         }
 ?> 

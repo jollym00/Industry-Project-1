@@ -66,7 +66,7 @@
                           <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
                           <input type='submit' value='Unsubscribe'> 
                           </form> <td>";
-                      
+                          $_SESSION['page'] = 2;
                   echo "</tr>";
               }
               echo "</table>";

@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link href="css/main.css" rel="stylesheet">
+	<script src = "script/validation.js" ></script>
 	<style>	#stafflogin {position:absolute;	right: 10px;}
 			#textboxid{ height:150px;  font-size:11pt;}</style>
 
@@ -100,30 +101,36 @@
 <div class="d-flex justify-content-center">
     <div class="row d-flex justify-content-center">
 		<h4>Add New Legislation</h4>
-		<form method="post">
+		<form method="post" id="Legislation">
 			<div class="mb-3">
 				<label for="name" class="form-label">Act</label>
-				<input type="name" class="form-control" name="Act">
+				<input type="name" class="form-control" name="Act" id="act">
+				<span id = "actErr" class="hideSpan"></span>
 		  	</div>
 		  	<div class="mb-3">
 				<label for="text" class="form-label">Division</label>
-				<input type="text" class="form-control" name="Division">
+				<input type="text" class="form-control" name="Division" id="division">
+				<span id = "divisionErr" class="hideSpan"></span>
 		  	</div>
 		  	<div class="mb-3">
 				<label for="text" class="form-label">Legislation Number</label>
-				<input type="text" class="form-control" name="LegNum">
+				<input type="text" class="form-control" name="LegNum" id="legnum">
+				<span id = "legnumErr" class="hideSpan"></span>
 		  	</div>
 			<div class="mb-3">
 				<label for="text" class="form-label">Legislation Name</label>
-				<input type="text" class="form-control" name="LegName">
+				<input type="text" class="form-control" name="LegName" id="legname">
+				<span id = "legnameErr" class="hideSpan"></span>
 		  	</div>
 			<div class="mb-3">
 				<label for="text" class="form-label">Content</label>
-				<input type="text" class="form-control" name="content" id="textboxid">
+				<input type="text" class="form-control" name="content" id="content">
+				<span id = "contentErr" class="hideSpan"></span>
 		  	</div>
 			  <div class="mb-3">
 				<label for="text" class="form-label">Anitech Reccomendation</label>
-				<input type="text" class="form-control" name="AniRec" id="textboxid">
+				<input type="text" class="form-control" name="AniRec" id="recommendation">
+				<span id = "recommendationErr" class="hideSpan"></span>
 		  	</div>	
           <button id="signupBtn" type="submit" class="btn btn-primary">SignUp</button>
           <br>

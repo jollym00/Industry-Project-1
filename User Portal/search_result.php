@@ -40,7 +40,13 @@
             echo "<div class='d-flex justify-content-center'>";
         session_start();
         $id = $_SESSION['ID'];
-        $search = $_POST['Search'];
+        if (empty($_SESSION['Search'])) {
+            $search = $_POST['Search'];
+            $_SESSION['Search'] = $_POST['Search'];
+        }
+        else {
+            $search = $_SESSION['Search'];
+        }
         $sql = "SELECT * FROM legislation where Act like '%$search%' or Division like '%$search%' or LegNum like '%$search%' or 
         LegName like '%$search%' or Content like '%$search%' or AniRec like '%$search%'" ;
         if($result = mysqli_query($con, $sql)){
@@ -76,6 +82,7 @@
                             <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
                             <input type='submit' value='Unsubscribe'> 
                             </form> <td>";
+
                         }
                           else{
                             echo "<td> Unsubscribed </td>";

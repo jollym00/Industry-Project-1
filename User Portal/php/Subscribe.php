@@ -9,6 +9,6 @@
                     VALUES ('$LawID', '$id')";
     $rs = mysqli_query($con, $sql);
 
-    header("Location: ../SubcribeUnsubcribe.php");
+    header("Location: ../search_result.php");
 
     ?>

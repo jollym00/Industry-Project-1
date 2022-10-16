@@ -2,9 +2,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
 $outlook_mail = new PHPMailer;
  
@@ -16,12 +16,12 @@ $outlook_mail->Port = 587;
 $outlook_mail->SMTPSecure = 'tls';
 $outlook_mail->SMTPDebug = 1;
 $outlook_mail->SMTPAuth = true;
-$outlook_mail->Username = 'Complianceplus22@outlook.com';
+$outlook_mail->Username = 'Compliancepluss2022@outlook.com';
 $outlook_mail->Password = 'CompliancePlus1';
  
-$outlook_mail->From = 'Complianceplus22@outlook.com';
+$outlook_mail->From = 'Compliancepluss2022@outlook.com';
 $outlook_mail->FromName = 'complianceplus';// frome name
-$outlook_mail->AddAddress('melwinjolly@gmail.com', 'Melwin Jolly'); 
+$outlook_mail->AddAddress($mail); 
  
 $outlook_mail->IsHTML(true); // Set email format to HTML
  

@@ -2,10 +2,16 @@
 <phpunit bootstrap="vendor/autoload.php"
     colors="true"
     stopOnFailure="false">
+<<<<<<< Updated upstream
 
     <testsuites>
         <testsuite name="Lahebo">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+=======
+    <testsuite name="Feature">
+    <directory suffix="LaheboTestopy.php">tests</directory>
+    </testsuite>
+>>>>>>> Stashed changes
 </phpunit> 

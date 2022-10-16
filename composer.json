@@ -1,7 +1,11 @@
 {
     "require-dev": {
         "phpunit/phpunit": "9.5"
+<<<<<<< Updated upstream
     },
+=======
+    }, 
+>>>>>>> Stashed changes
     "autoload": {
         "psr-4": {
             "classmap": "UserPortal/"

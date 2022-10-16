@@ -1,9 +1,15 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
+<<<<<<< Updated upstream
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
         'reference' => '9c8f6d4379b7f618708663a2e72a27586ddbc3f6',
+=======
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+>>>>>>> Stashed changes
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +17,15 @@
     ),
     'versions' => array(
         '__root__' => array(
+<<<<<<< Updated upstream
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
             'reference' => '9c8f6d4379b7f618708663a2e72a27586ddbc3f6',
+=======
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+>>>>>>> Stashed changes
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

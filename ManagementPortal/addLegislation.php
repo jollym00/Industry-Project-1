@@ -21,7 +21,7 @@
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Lahebo</a>
+			<a class="navbar-brand" href="homepage.php">Lahebo</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
@@ -132,7 +132,7 @@
 				<input type="text" class="form-control" name="AniRec" id="recommendation">
 				<span id = "recommendationErr" class="hideSpan"></span>
 		  	</div>	
-          <button id="signupBtn" type="submit" class="btn btn-primary">SignUp</button>
+          <button id="signupBtn" type="submit" class="btn btn-primary">Add Legislation</button>
           <br>
 		  <br>
 		  <br>

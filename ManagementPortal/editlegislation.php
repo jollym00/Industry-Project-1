@@ -68,7 +68,7 @@
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Lahebo</a>
+			<a class="navbar-brand" href="homepage.php">Lahebo</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
@@ -137,7 +137,7 @@
 				<span id = "contentErr" class="hideSpan"></span>
 		  	</div>
 			  <div class="mb-3">
-				<label for="text" class="form-label">Anitech Reccomendation</label>
+				<label for="text" class="form-label">Anitech Recommendation</label>
 				<input type="text" class="form-control" name="AniRec" id="textboxid" value="<?php echo $row1['AniRec']; ?>">
 		  	</div>	
           <button id="signupBtn" type="submit" class="btn btn-primary">Update</button>

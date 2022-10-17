@@ -33,6 +33,13 @@
 	</nav> 
 	<br>
 	<br>
+	<div hiiden>
+		<?php
+		session_start();
+		unset($_SESSION['Search'];	
+		
+		?>
+	</div>
 	<div class="d-flex justify-content-center">
 		<div div class="row d-flex justify-content-center">
 			<h3>Search Legislations</h3>

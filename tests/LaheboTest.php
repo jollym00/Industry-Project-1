@@ -31,7 +31,7 @@ class MyTest extends TestCase
       
         $con = new mysqli($dbhost, $username, $password, $dbname, $dbport);
 
-        $sql = "SELECT COUNT(Act) FROM legislation 
+        $sql = "SELECT * FROM legislation 
         where   Act like 'Fair Work Act 2009' or 
                 Division like 'Fair Work Act 2009' or 
                 LegNum like 'Fair Work Act 2009' or 
@@ -42,7 +42,7 @@ class MyTest extends TestCase
 
         $count = mysqli_num_rows($result); 
 
-        $this->assertEquals(1,$count);
+        $this->assertEquals(202,$count);
     }
 
     public function test3()
@@ -62,7 +62,9 @@ class MyTest extends TestCase
         $password = '123456';  
         $company = 'Swin';  
 
-        $sql = "update customer set Email = '$email', Password = '$password', Company = '$company', `Full Name`='$name', MobilePhone =$MobilePhone  WHERE ClinetID=$id";  
+        $sql = "update customer set Email = '$email', 
+        Password = '$password', Company = '$company', `
+        Full Name`='$name', MobilePhone =$MobilePhone  WHERE ClinetID=$id";  
          
         $result = mysqli_query($con, $sql); 
 

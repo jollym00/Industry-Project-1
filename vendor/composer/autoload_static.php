@@ -4,11 +4,7 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< Updated upstream
 class ComposerStaticInit56bfe212e593d5f267d97422c35bc680
-=======
-class ComposerStaticInit15627edfa05cc14150f9dfe1e5c156a2
->>>>>>> Stashed changes
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -24,13 +20,10 @@ class ComposerStaticInit15627edfa05cc14150f9dfe1e5c156a2
         array (
             'Webmozart\\Assert\\' => 17,
         ),
-<<<<<<< Updated upstream
         'U' => 
         array (
             'UserPortal\\' => 11,
         ),
-=======
->>>>>>> Stashed changes
         'P' => 
         array (
             'Prophecy\\' => 9,
@@ -47,25 +40,17 @@ class ComposerStaticInit15627edfa05cc14150f9dfe1e5c156a2
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-<<<<<<< Updated upstream
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-=======
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
->>>>>>> Stashed changes
         ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
-<<<<<<< Updated upstream
         'UserPortal\\' => 
         array (
             0 => __DIR__ . '/../..' . '/UserPortal',
         ),
-=======
->>>>>>> Stashed changes
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
@@ -714,15 +699,9 @@ class ComposerStaticInit15627edfa05cc14150f9dfe1e5c156a2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< Updated upstream
             $loader->prefixLengthsPsr4 = ComposerStaticInit56bfe212e593d5f267d97422c35bc680::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit56bfe212e593d5f267d97422c35bc680::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit56bfe212e593d5f267d97422c35bc680::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInit15627edfa05cc14150f9dfe1e5c156a2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit15627edfa05cc14150f9dfe1e5c156a2::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit15627edfa05cc14150f9dfe1e5c156a2::$classMap;
->>>>>>> Stashed changes
 
         }, null, ClassLoader::class);
     }

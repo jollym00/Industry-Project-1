@@ -42,7 +42,7 @@
 			$currentDate = date('Y-m-d');
 
 			if ($currentDate < $row["DateExpiery"] && $row["Active"] == "Active" || $row["Renew"] == "yes" && $row["Active"] == "Active"){
-				header("Location: search.html");
+				header("Location: search.php");
 			}
 
 			

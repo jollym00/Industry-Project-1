@@ -26,7 +26,7 @@
 					<a class="nav-link" href="FAQ.html">FAQ</a>
 					<a class="nav-link" href="User Portal/login.php">Login</a>
 					<a class="nav-link" href="User Portal/sign_up.html">Sign Up</a>
-					<a class="nav-link" href="../ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
+					<a class="nav-link" href="ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
 				</div>
 			  </div>
 			</div>
@@ -37,6 +37,7 @@
         
       <div class="row d-flex justify-content-center">
         <h4>Log in</h4>
+		<p id="error">Incorrect Credentials. Please Try again</p>
         <form action="php/login.php" method="post">
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>

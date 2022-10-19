@@ -21,6 +21,6 @@
           header("Location: ../authenticaation.php");
         }
         else{
-            header("Location: ../login.php");
+            header("Location: ../loginfail.php");
         }
 ?>  

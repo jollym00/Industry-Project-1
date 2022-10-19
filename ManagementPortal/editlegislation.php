@@ -177,13 +177,15 @@
 			while($row = mysqli_fetch_array($result1)){
 				echo $row['Email'];
 				$mail = $row['Email'];
+
 				include('php/mail.php');
 			}
+		
 
-            /*if ($con->query($sql) === TRUE) {
+            if ($con->query($sql) === TRUE) {
                 echo '<script>alert("Record updated successfully")</script>';
                 header("Location: homepage.php");
-                } */
+            }
 		?>
 
 

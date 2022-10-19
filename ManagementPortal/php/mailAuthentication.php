@@ -25,8 +25,8 @@ $outlook_mail->AddAddress($mail);
  
 $outlook_mail->IsHTML(true); 
 
-$outlook_mail->Subject = 'Legislation Update notification';
-$outlook_mail->Body    = "Act: $Act <br> Division: $Division <br> Legislation Number: $LegNum <br> Legislation Name: $LegName";
+$outlook_mail->Subject = 'Google Authentication Code for Lahebo';
+$outlook_mail->Body    = "Google Authentication Code: $secret";
 
 if(!$outlook_mail->Send()) {
 	echo 'Message could not be sent.';

@@ -93,7 +93,12 @@
     ?> 
 
 <br>
-
+<div hiiden>
+		<?php
+		unset($_SESSION['Search']);	
+		
+		?>
+	</div>
     
     <div class="d-flex justify-content-center" style="height: 200px">
 		<div div class="row d-flex justify-content-center">

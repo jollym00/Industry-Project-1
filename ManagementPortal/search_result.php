@@ -92,7 +92,13 @@
          
     include('php/connection.php'); 
     echo "<div class='d-flex justify-content-center'>";
-     $search = $_POST['search'];
+    if (empty($_SESSION['search'])) {
+      $search = $_POST['search'];
+      $_SESSION['search'] = $_POST['search'];
+    }
+    else {
+      $search = $_SESSION['search'];
+    }
      $sql = "SELECT * FROM legislation where Act like '%$search%' or Division like '%$search%' or LegNum like '%$search%' or 
      LegName like '%$search%' or Content like '%$search%' or AniRec like '%$search%'" ;
     if($result = mysqli_query($con, $sql)){
@@ -105,6 +111,7 @@
             echo "<th>Legislation Name</th>";
             echo "<th>Content</th>";
             echo "<th>Anitech Reccomendation</th>";
+            echo "<th></th>";
             echo "<th></th>";
             echo "</tr>";
             while($row = mysqli_fetch_array($result)){
@@ -120,6 +127,11 @@
                         <input type='submit' value='Edit'> 
                         </form>
                      <td>";
+                echo "<td> <form method='post' action='php/delete.php'>
+                     <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
+                     <input type='submit' value='Delete'> 
+                     </form>
+                  <td>";
                 echo "</tr>";
             }
             echo "</table>";

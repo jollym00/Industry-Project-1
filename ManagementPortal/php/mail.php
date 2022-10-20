@@ -26,7 +26,7 @@ $outlook_mail->AddAddress($mail);
 $outlook_mail->IsHTML(true); 
 
 $outlook_mail->Subject = 'Legislation Update notification';
-$outlook_mail->Body    = "Act: $Act <br> Division: $Division <br> Legislation Number: $LegNum <br> Legislation Name: $LegName";
+$outlook_mail->Body    = "Hello Lahebo User, <br> <br> The following legislation has been updated: <br> <br> Act: $Act <br> Division: $Division <br> Legislation Number: $LegNum <br> Legislation Name: $LegName <br> <br> Please log in to your Lahebo account to view the change. <br> <br> Thanks, <br> The Lahebo Team";
 
 if(!$outlook_mail->Send()) {
 	echo 'Message could not be sent.';

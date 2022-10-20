@@ -26,7 +26,7 @@
 					<a class="nav-link" href="FAQ.html">FAQ</a>
 					<a class="nav-link" href="User Portal/login.php">Login</a>
 					<a class="nav-link" href="User Portal/sign_up.html">Sign Up</a>
-					<a class="nav-link" href="ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
+					<a class="nav-link" href="../ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
 				</div>
 			  </div>
 			</div>

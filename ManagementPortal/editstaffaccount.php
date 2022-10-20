@@ -93,7 +93,7 @@
         
       <div class="row d-flex justify-content-center">
 
-		<h4>Edit Legislation</h4>
+		<h4>Edit Staff Account</h4>
         <?php 	
                 include('php/connection.php');
                 $id = $_POST['idmanagementUser'];

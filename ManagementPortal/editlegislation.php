@@ -101,7 +101,7 @@
     
 <div class="d-flex justify-content-center">
     <div class="row d-flex justify-content-center">
-		<h4>Add New Legislation</h4>
+		<h4>Edit Legislation</h4>
 		<form method="post" id="Legislation">
         <?php 	
                 include('php/connection.php');

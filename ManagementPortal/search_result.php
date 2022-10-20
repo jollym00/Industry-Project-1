@@ -90,8 +90,10 @@
 <br>
 <?php
          
-    include('php/connection.php'); 
+    include('php/connection.php');
+    echo "<h4 class='text-center'>Search Results</h4>"; 
     echo "<div class='d-flex justify-content-center'>";
+
     if (empty($_SESSION['search'])) {
       $search = $_POST['search'];
       $_SESSION['search'] = $_POST['search'];

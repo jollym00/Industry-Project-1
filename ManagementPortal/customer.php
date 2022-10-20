@@ -89,7 +89,7 @@
     ?> 
 <br>
 <?php
-	echo "<h4 class='text-center'>Customer</h4>";
+	echo "<h4 class='text-center'>Customers</h4>";
 	echo"<br>";
     include('php/connection.php'); 
     echo "<div class='d-flex justify-content-center'>";

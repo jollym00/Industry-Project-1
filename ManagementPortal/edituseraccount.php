@@ -115,16 +115,7 @@
           <input type="email" class="form-control" name="email" id="email" value="<?php echo $row1['Email']; ?>">
           <span id = "emailErr" class="hideSpan"></span>
         </div>
-        <div class="mb-3">
-          <label for="Password" class="form-label">Password</label>
-          <input type="password" class="form-control" name="password" id="password1" value="<?php echo $row1['Password']; ?>">
-          <span id = "pwd1Err" class="hideSpan"></span>
-        </div>
-        <div class="mb-3">
-          <label for="Password" class="form-label">Re-enter Password</label>
-          <input type="password" class="form-control" name="password" id="password2" value="<?php echo $row1['Password']; ?>">
-          <span id = "pwd2Err" class="hideSpan"></span>
-        </div>
+  
         <div class="mb-3">
           <label for="phone" class="form-label">Phone</label>
           <input type="text" class="form-control" name="phone" id="phone" value="<?php echo $row1['MobilePhone']; ?>">

@@ -36,7 +36,8 @@
     
         <?php
          
-            include('php/connection.php'); 
+            include('php/connection.php');
+            echo "<h4 class='text-center'>Search Results</h4>"; 
             echo "<div class='d-flex justify-content-center'>";
         session_start();
         $id = $_SESSION['ID'];

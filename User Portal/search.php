@@ -13,7 +13,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<nav class="navbar sticky-top navbar-expand-lg">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="search.html">
+			<a class="navbar-brand" href="search.php">
 				<img src="../img/mainLogo.png" alt="..." height="36">
 		  </a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			  <div class="navbar-nav">
 				<div class="d-flex justify-content-between">
-					<a class="nav-link" href="homepage.html" >Legislation Search</a>
+					<a class="nav-link" href="search.php" >Legislation Search</a>
 					<a class="nav-link" href="SubcribeUnsubcribe.php" >My Legislations</a>
 					<a class="nav-link" href="EditAccount.php" >Account</a>
 					<a class="nav-link" href="login.php">Sign Out</a>

@@ -35,7 +35,7 @@
 		include('connection.php');  
 
 		session_start();
-				
+		echo "<p id='error'>Verfication Failed. Please Try again scanning the QR</p>"	;	
 		echo "<div class='parent container d-flex justify-content-center align-items-center '>";
 		echo "<div class='row d-flex justify-content-center'>";
 		include('RegisterAuthentication.php'); 

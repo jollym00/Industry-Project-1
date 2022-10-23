@@ -25,10 +25,6 @@
 
 	
 ?>
-
-<div class="d-flex justify-content-center">
-        
-      		<div class="row d-flex justify-content-center">
 				<form method="post" action="verfication.php">
 					<div class="mb-3">
 						<h4 for="exampleInputEmail1" class="form-label">Token</h4>
@@ -37,5 +33,3 @@
 					</div>
 					<button type="submit" class="btn btn-primary" id="submit_code">Submit</button>
 				</form>
-			</div>
-</div>

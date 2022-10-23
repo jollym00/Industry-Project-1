@@ -40,6 +40,10 @@
             echo "<h4 class='text-center'>Search Results</h4>"; 
             echo "<div class='d-flex justify-content-center'>";
         session_start();
+        if (empty($_SESSION['ID'])) {
+            header("Location: login.php");
+        }
+
         $id = $_SESSION['ID'];
         if (empty($_SESSION['Search'])) {
             $search = $_POST['Search'];
@@ -111,6 +115,8 @@
         mysqli_close($con);
         echo "</div>";
         ?>
+
+
     
 
 </body>

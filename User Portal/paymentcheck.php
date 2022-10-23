@@ -34,6 +34,9 @@
 		<?php
 			include('php/connection.php');
 			session_start();
+			if (empty($_SESSION['ID'])) {
+				header("Location: login.php");
+			}
 			$id = $_SESSION['ID'];
 			$sql = "SELECT * FROM `customer` where ClinetID = '$id'";
 			$a = mysqli_query($con, $sql);

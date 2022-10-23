@@ -36,7 +36,11 @@
 	<div hiiden>
 		<?php
 		session_start();
-		unset($_SESSION['Search']);	
+		unset($_SESSION['search']);	
+		if (empty($_SESSION['ID'])) {
+			header("Location: login.php");
+		  
+		}
 		
 		?>
 	</div>
@@ -53,7 +57,5 @@
         
     	</div>
 	</div>
-
-
 </body>
 </html>

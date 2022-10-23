@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<nav class="navbar sticky-top navbar-expand-lg">
 		<div class="container-fluid">
-    <a class="navbar-brand" href="search.html">
+    <a class="navbar-brand" href="search.php">
       			<img src="../img/mainLogo.png" alt="..." height="36">
     		</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,9 @@
       echo "<h4 class='text-center'>My Subscriptions</h4>";
         echo "<div class='d-flex justify-content-center'>";
       session_start();
+      if (empty($_SESSION['ID'])) {
+        header("Location: login.php");
+      }
       $id = $_SESSION['ID'];
       $sql = "SELECT * FROM search where ClinetID=$id;" ;
       if($result = mysqli_query($con, $sql)){
@@ -84,6 +87,13 @@
       mysqli_close($con);
       echo "</div>";
   ?>
+
+<?php 
+if (empty($_SESSION['ID'])) {
+  header("Location: login.php");
+
+}
+?> 
 		
 
  

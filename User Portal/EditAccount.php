@@ -46,6 +46,9 @@
                 include('php/connection.php');
                 session_start();
                 $id = $_SESSION['ID'];
+				if (empty($_SESSION['ID'])) {
+					header("Location: login.php");
+				}
                 $sql = "select * from customer where ClinetID = $id";
                 $result = mysqli_query($con, $sql);  
                 while ($row1 = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

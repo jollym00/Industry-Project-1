@@ -2,7 +2,7 @@
 	require_once 'PHPGangsta/GoogleAuthenticator.php';
 	include('connection.php');
 	session_start();
-	$id = $_SESSION['ID'];
+	$id = $_SESSION['ClinetID'];
 	$sql = "SELECT `GoogleCode` FROM `customer` where ClinetID = '$id'";  
 	$a = mysqli_query($con, $sql);  
 	$row = mysqli_fetch_array($a, MYSQLI_ASSOC);
@@ -11,9 +11,9 @@
 	$ga = new PHPGangsta_GoogleAuthenticator();
 	$result = $ga->verifyCode($secret, $code, 3);
 	if ($result == 1){
-		header("Location: ../paymentcheck.php");
+		header("Location: payment.php");
 	}
 	else {
-		header("Location: ../authenticaationfail.php");
+		header("Location: failedverfication.php");
 	}
 ?>

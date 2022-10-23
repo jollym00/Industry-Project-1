@@ -35,32 +35,7 @@
 		include('connection.php');  
 
 		session_start();
-		// get the post records
-		$txtName = $_POST['name'];
-		$txtEmail = $_POST['email'];
-		$txtPassword = $_POST['password'];
-		$txtCompany = $_POST['company'];
-		$txtPayment = $_POST['payment'];
-		$AutoRenew = $_POST['AutoRenew'];
-		$_SESSION['AutoRenew'] = $AutoRenew;
-		$_SESSION['payment'] = $txtPayment;
-
-		if($txtPayment == "yearly" )		{
-			$newDate = date('Y-m-d', strtotime(' + 1 years'));
-		}
-		else {			
-			$newDate = date('Y-m-d', strtotime(' + 1 months'));		
-		}
-
-		$sql = "INSERT INTO `customer`(`Full Name`, `Email`, `Password`, `Company`, `Paymentsub`, `Renew`, `Active`, `DateExpiery`, `GoogleCode`)
-							VALUES ('$txtName', '$txtEmail', '$txtPassword', '$txtCompany', '$txtPayment', '$AutoRenew','Deactive','$newDate', 'null' )";
-		
-		// Change active to Inactive once the website is deployed
-		$rs = mysqli_query($con, $sql);
-		$last_id = mysqli_insert_id($con);
-		$_SESSION['ClinetID'] = $last_id;
-
-		
+				
 		echo "<div class='parent container d-flex justify-content-center align-items-center '>";
 		echo "<div class='row d-flex justify-content-center'>";
 		include('RegisterAuthentication.php'); 

@@ -115,7 +115,7 @@
             echo "<th>Legislation Num</th>";
             echo "<th>Legislation Name</th>";
             echo "<th>Content</th>";
-            echo "<th>Anitech Reccomendation</th>";
+            echo "<th>Anitech Recommendation</th>";
             echo "<th></th>";
             echo "<th></th>";
             echo "</tr>";

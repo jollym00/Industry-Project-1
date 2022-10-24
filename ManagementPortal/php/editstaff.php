@@ -8,7 +8,6 @@
                 $Phone = $_POST['phone'];
                 $role = $_POST['role'];
                 $Active = $_POST['Active'];
-                $verification = $_POST['verification'];
 
                  $sql = "UPDATE managementUser SET 
                     Full_Name = '$txtName',             

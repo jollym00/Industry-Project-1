@@ -128,11 +128,11 @@
           <input type="text" class="form-control" name="phone" id="phone" value="<?php echo $row1['Phone']; ?>">
           <span id = "phoneErr" class="hideSpan"></span>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="verification" class="form-label">User Verification Number</label>
           <input type="text" class="form-control" name="verification" id="verification">
           <span id = "uservErr" class="hideSpan"></span>
-        </div>
+        </div> -->
 
         <div class="mb-3">
             <label for="Active">Active:</label>

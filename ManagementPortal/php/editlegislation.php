@@ -1,5 +1,5 @@
 <?php
-	include('php/connection.php');  
+	include('connection.php');  
 	$Act = $_POST['Act'];
 	$Division = $_POST['Division'];
 	$LegNum = $_POST['LegNum'];
@@ -21,9 +21,10 @@
 	$sql2 = "select Email from email where legislationID = '$legislationID'"; 
 	$result1 = mysqli_query($con, $sql2);
 	while($row = mysqli_fetch_array($result1)){
-		echo $row['Email'];
+		// echo $row['Email'];
 		$mail = $row['Email'];
 		include('mail.php');
+		header("Location: ../search_result.php");
 	}
 	if ($con->query($sql2) === TRUE) {
 		echo '<script>alert("Record updated successfully")</script>';

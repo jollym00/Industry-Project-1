@@ -26,7 +26,7 @@ $outlook_mail->AddAddress($mail);
 $outlook_mail->IsHTML(true); 
 
 $outlook_mail->Subject = 'Google Authentication Code for Lahebo';
-$outlook_mail->Body    = "Google Authentication Code: $secret";
+$outlook_mail->Body    = "Hello Anitech Employee, <br> <br>An account has been set up for you by your supervisor <br>Please Google Authenticator to set up your Two-Factor Authentication <br><br> Google Authentication Code: $secret <br><br> Thank you, <br>The Lahebo Team";
 
 if(!$outlook_mail->Send()) {
 	echo 'Message could not be sent.';

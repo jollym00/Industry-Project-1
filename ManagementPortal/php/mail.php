@@ -29,13 +29,17 @@ $outlook_mail->Subject = 'Legislation Update Notification';
 $outlook_mail->Body    = "Hello Lahebo User, <br> <br> The following legislation has been updated: <br> <br> Act: $Act <br> Division: $Division <br> Legislation Number: $LegNum <br> Legislation Name: $LegName <br> <br> Please log in to your Lahebo account to view the change. <br> <br> Thanks, <br> The Lahebo Team";
 
 if(!$outlook_mail->Send()) {
-	echo 'Message could not be sent.';
-	echo 'Mailer Error: ' . $outlook_mail->ErrorInfo;
+	// echo 'Message could not be sent.';
+	// echo 'Mailer Error: ' . $outlook_mail->ErrorInfo;
+	header("Location: ../search_result.php");
 	exit;
+	
 }
 else
 {
-	echo 'Message of Send email using Outlook SMTP server has been sent';
+	// echo 'Message of Send email using Outlook SMTP server has been sent';
+	header("Location: ../search_result.php");
+	exit;
 }
 
 ?>

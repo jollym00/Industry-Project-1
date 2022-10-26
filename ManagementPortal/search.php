@@ -18,7 +18,7 @@
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="homepage.php">
       			<img src="../img/mainLogo.png" alt="..." height="36">
     		</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
 					<a class="nav-link" href="customer.php">Customer</a>
 					<a class="nav-link" href="sign_up.html">Add Staff</a>
                     <a class="nav-link" href="Editstaff.php">Staff</a>  
-					<a class="nav-link" href="stafflogin.html" id="stafflogin">Logout</a>   
+					<a class="nav-link" href="logout.php" id="stafflogin">Logout</a>   
 				</div>
 			  </div>
 			</div>
@@ -44,7 +44,7 @@
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Lahebo</a>
+			<a class="navbar-brand" href="homepage.php">Lahebo</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
@@ -52,7 +52,7 @@
 			  <div class="navbar-nav">
 				<div class="d-flex justify-content-between">
 					<a class="nav-link" href="customer.php">Customer</a>
-					<a class="nav-link" href="stafflogin.html" id="stafflogin">Logout</a>   
+					<a class="nav-link" href="logout.php" id="stafflogin">Logout</a>   
 				</div>
 			  </div>
 			</div>
@@ -67,7 +67,7 @@
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Lahebo</a>
+			<a class="navbar-brand" href="homepage.php">Lahebo</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
@@ -76,7 +76,7 @@
 				<div class="d-flex justify-content-between">
 					<a class="nav-link" href="search.html" >Search</a>
 					<a class="nav-link" href="Addlegislation.html">Add Legislation</a>
-                    <a class="nav-link" href="stafflogin.html" id="stafflogin">Logout</a>  
+                    <a class="nav-link" href="logout.php" id="stafflogin">Logout</a>  
 				</div>
 			  </div>
 			</div>

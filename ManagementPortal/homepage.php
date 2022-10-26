@@ -99,7 +99,6 @@
 	<div class="parent container d-flex justify-content-center align-items-center ">
 		<div class="row d-flex justify-content-center">
 			<h1>Welcome to Lahebo Management Portal</h1>
-			<p><a href="login.html">Login</a> or <a href="stafflogin.html">Sign Up</a> Now</p>
 		</div>
 	
 	</div>

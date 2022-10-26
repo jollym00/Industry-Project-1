@@ -126,12 +126,12 @@
 		  	</div>
 			<div class="mb-3">
 				<label for="text" class="form-label">Content</label>
-				<input type="text" class="form-control" name="content" id="content">
+				<input type="text" class="form-control" name="content" id="content" rows="2" cols="20" wrap="hard">
 				<span id = "contentErr" class="hideSpan"></span>
 		  	</div>
 			  <div class="mb-3">
 				<label for="text" class="form-label">Anitech Reccomendation</label>
-				<input type="text" class="form-control" name="AniRec" id="recommendation">
+				<input type="text" class="form-control" name="AniRec" id="recommendation" rows="2" cols="20" wrap="hard">
 				<span id = "recommendationErr" class="hideSpan"></span>
 		  	</div>	
           <button id="signupBtn" type="submit" class="btn btn-primary">Add Legislation</button>

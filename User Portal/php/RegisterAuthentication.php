@@ -22,14 +22,4 @@
 	$ClinetID = $_SESSION['ClinetID'];
 	$sql = "UPDATE `customer`  SET `GoogleCode`='$secret' where `ClinetID`= '$ClinetID'";
 	$rs = mysqli_query($con, $sql); 
-
-	
 ?>
-				<form method="post" action="verfication.php">
-					<div class="mb-3">
-						<h4 for="exampleInputEmail1" class="form-label">Token</h4>
-						<input type="text" name="google_code" class="form-control" id="google_token" aria-describedby="token">
-						<div id="token_hint" class="form-text">Please enter your token from the google authenticator app</div>
-					</div>
-					<button type="submit" class="btn btn-primary" id="submit_code">Submit</button>
-				</form>

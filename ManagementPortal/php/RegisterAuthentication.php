@@ -23,15 +23,3 @@
 	$sql = "UPDATE `managementUser`  SET `GoogleCode`='$secret' where `idmanagementUser`= '$userID'";
 	$rs = mysqli_query($con, $sql); 
 ?>
-
-<div hidden>
-	<?php
-		$sql1 = "select Email from managementUser where `idmanagementUser`= '$userID'";
-		$r1 = mysqli_query($con, $sql1);
-		while($row = mysqli_fetch_array($r1)){
-			$mail = $row['Email'];
-			include('mailAuthentication.php');
-		}
-	?>
-</div>
-	

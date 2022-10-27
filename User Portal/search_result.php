@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<nav class="navbar sticky-top navbar-expand-lg">
 		<div class="container-fluid">
-        <a class="navbar-brand" href="search.html">
+        <a class="navbar-brand" href="search.php">
       			<img src="../img/mainLogo.png" alt="..." height="36">
     		</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,9 +36,14 @@
     
         <?php
          
-            include('php/connection.php'); 
+            include('php/connection.php');
+            echo "<h4 class='text-center'>Search Results</h4>"; 
             echo "<div class='d-flex justify-content-center'>";
         session_start();
+        if (empty($_SESSION['ID'])) {
+            header("Location: login.php");
+        }
+
         $id = $_SESSION['ID'];
         if (empty($_SESSION['Search'])) {
             $search = $_POST['Search'];
@@ -58,7 +63,7 @@
                         echo "<th>Legislation Num</th>";
                         echo "<th>Legislation Name</th>";
                         echo "<th>Content</th>";
-                        echo "<th>Anitech Reccomendation</th>";
+                        echo "<th>Anitech Recommendation</th>";
                         echo "<th>Subscription Status</th>";
                         echo "<th> </th>";
                     echo "</tr>";
@@ -110,6 +115,8 @@
         mysqli_close($con);
         echo "</div>";
         ?>
+
+
     
 
 </body>

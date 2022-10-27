@@ -3,7 +3,7 @@
 }
 
 .navbar {
-    background-color: #bb9a57;
+    background-color: rgba(0, 0, 0, 0.397);
     
 }
 
@@ -35,3 +35,7 @@
     font-size: medium;
     font-style: italic;
   }
+
+#error{
+    color: red;
+}

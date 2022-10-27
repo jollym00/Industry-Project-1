@@ -14,11 +14,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 	<?php 	
     session_start();
+    if(empty($_SESSION['role'])){
+      header("Location: ../stafflogin.html");
+    }
     if( $_SESSION['role'] == "superadmin"){
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="homepage.php">
       			<img src="../img/mainLogo.png" alt="..." height="36">
     		</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +34,7 @@
 					<a class="nav-link" href="Addlegislation.php">Add Legislation</a>
 					<a class="nav-link" href="customer.php">Customer</a>
 					<a class="nav-link" href="sign_up.html">Add Staff</a>
-                    <a class="nav-link" href="Editstaff.php">Staff</a>  
+          <a class="nav-link" href="Editstaff.php">Staff</a>  
 					<a class="nav-link" href="stafflogin.html" id="stafflogin">Logout</a>   
 				</div>
 			  </div>
@@ -44,7 +47,7 @@
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Lahebo</a>
+			<a class="navbar-brand" href="homepage.php">Lahebo</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
@@ -67,15 +70,15 @@
         ?> 
         <nav class="navbar sticky-top navbar-expand-lg ">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="index.html">Lahebo</a>
+			<a class="navbar-brand" href="homepage.php">Lahebo</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
 			  <div class="navbar-nav">
 				<div class="d-flex justify-content-between">
-					<a class="nav-link" href="search.html" >Search</a>
-					<a class="nav-link" href="Addlegislation.html">Add Legislation</a>
+					<a class="nav-link" href="search.php" >Search</a>
+					<a class="nav-link" href="Addlegislation.php">Add Legislation</a>
                     <a class="nav-link" href="stafflogin.html" id="stafflogin">Logout</a>  
 				</div>
 			  </div>
@@ -90,9 +93,17 @@
 <br>
 <?php
          
-    include('php/connection.php'); 
+    include('php/connection.php');
+    echo "<h4 class='text-center'>Search Results</h4>"; 
     echo "<div class='d-flex justify-content-center'>";
-     $search = $_POST['search'];
+
+    if (empty($_SESSION['search'])) {
+      $search = $_POST['search'];
+      $_SESSION['search'] = $_POST['search'];
+    }
+    else {
+      $search = $_SESSION['search'];
+    }
      $sql = "SELECT * FROM legislation where Act like '%$search%' or Division like '%$search%' or LegNum like '%$search%' or 
      LegName like '%$search%' or Content like '%$search%' or AniRec like '%$search%'" ;
     if($result = mysqli_query($con, $sql)){
@@ -104,7 +115,8 @@
             echo "<th>Legislation Num</th>";
             echo "<th>Legislation Name</th>";
             echo "<th>Content</th>";
-            echo "<th>Anitech Reccomendation</th>";
+            echo "<th>Anitech Recommendation</th>";
+            echo "<th></th>";
             echo "<th></th>";
             echo "</tr>";
             while($row = mysqli_fetch_array($result)){
@@ -120,6 +132,11 @@
                         <input type='submit' value='Edit'> 
                         </form>
                      <td>";
+                echo "<td> <form method='post' action='php/delete.php'>
+                     <input type='number' name='LawID' value=" . $row['legislationID']. " hidden>
+                     <input type='submit' value='Delete'> 
+                     </form>
+                  <td>";
                 echo "</tr>";
             }
             echo "</table>";

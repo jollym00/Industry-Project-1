@@ -22,17 +22,23 @@
 			<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
 			  <div class="navbar-nav">
 				<div class="d-flex justify-content-between">
-					<a class="nav-link" href="Pricing.html" >Pricing</a>
-					<a class="nav-link" href="FAQ.html">FAQ</a>
-					<a class="nav-link" href="User Portal/login.php">Login</a>
-					<a class="nav-link" href="User Portal/sign_up.html">Sign Up</a>
-					<a class="nav-link" href="ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
+					<a class="nav-link" href="../Pricing.html" >Pricing</a>
+					<a class="nav-link" href="../FAQ.html">FAQ</a>
+					<a class="nav-link" href="login.php">Login</a>
+					<a class="nav-link" href="sign_up.html">Sign Up</a>
+					<a class="nav-link" href="../ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
 				</div>
 			  </div>
 			</div>
 		  </div>
 	  </nav>
     <br><br>
+	<div hidden>
+		<?php
+			session_start();
+			session_destroy();
+		?>
+	</div>
     <div class="d-flex justify-content-center">
         
       <div class="row d-flex justify-content-center">
@@ -51,5 +57,7 @@
         </form>
       </div>
     </div>
+	
   </body>
 </html>
+

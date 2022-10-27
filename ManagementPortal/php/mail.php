@@ -23,20 +23,23 @@ $outlook_mail->From = 'Compliancepluss2022@outlook.com';
 $outlook_mail->FromName = 'complianceplus';// frome name
 $outlook_mail->AddAddress($mail); 
  
-$outlook_mail->IsHTML(true); // Set email format to HTML
- 
-$outlook_mail->Subject = 'Legislation Update notification';
-$outlook_mail->Body    = 'Send email using Outlook SMTP server <br>This is the HTML message body <strong>in bold!</strong> <a href="https://onlinecode.org/" target="_blank">onlincode.org</a>';
-$outlook_mail->AltBody = 'This is the body in plain text for non-HTML mail clients at https://onlinecode.org/';
- 
+$outlook_mail->IsHTML(true); 
+
+$outlook_mail->Subject = 'Legislation Update Notification';
+$outlook_mail->Body    = "Hello Lahebo User, <br> <br> The following legislation has been updated: <br> <br> Act: $Act <br> Division: $Division <br> Legislation Number: $LegNum <br> Legislation Name: $LegName <br> <br> Please log in to your Lahebo account to view the change. <br> <br> Thanks, <br> The Lahebo Team";
+
 if(!$outlook_mail->Send()) {
-	echo 'Message could not be sent.';
-	echo 'Mailer Error: ' . $outlook_mail->ErrorInfo;
+	// echo 'Message could not be sent.';
+	// echo 'Mailer Error: ' . $outlook_mail->ErrorInfo;
+	header("Location: ../search_result.php");
 	exit;
+	
 }
 else
 {
-	echo 'Message of Send email using Outlook SMTP server has been sent';
+	// echo 'Message of Send email using Outlook SMTP server has been sent';
+	header("Location: ../search_result.php");
+	exit;
 }
 
 ?>

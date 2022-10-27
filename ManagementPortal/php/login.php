@@ -24,11 +24,11 @@
             header("Location: ../authenticaation.php");
           }
           else {
-            header("Location: ../stafflogin.html");
+            header("Location: ../staffloginfail.html");
           }
          
         }
         else{
-            header("Location: ../stafflogin.html");
+            header("Location: ../staffloginfail.html");
         }
 ?> 

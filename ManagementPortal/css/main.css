@@ -30,3 +30,7 @@
     font-size: medium;
     font-style: italic;
   }
+
+#error {
+    color: red;
+  }

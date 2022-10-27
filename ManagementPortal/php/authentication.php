@@ -15,6 +15,6 @@
 		header("Location: ../homepage.php");
 	}
 	else {
-		echo "TRY again";
+		header("Location: ../authenticaationfail.php");
 	}
 ?>

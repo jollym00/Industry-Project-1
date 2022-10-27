@@ -21,11 +21,11 @@
 			</button>
 			<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
 			  <div class="navbar-nav">
-			  <div class="d-flex justify-content-between">
-					<a class="nav-link" href="../Pricing.html" >Pricing</a>
-					<a class="nav-link" href="../FAQ.html">FAQ</a>
-					<a class="nav-link" href="login.php">Login</a>
-					<a class="nav-link" href="sign_up.html">Sign Up</a>
+				<div class="d-flex justify-content-between">
+					<a class="nav-link" href="Pricing.html" >Pricing</a>
+					<a class="nav-link" href="FAQ.html">FAQ</a>
+					<a class="nav-link" href="User Portal/login.php">Login</a>
+					<a class="nav-link" href="User Portal/sign_up.html">Sign Up</a>
 					<a class="nav-link" href="../ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
 				</div>
 			  </div>

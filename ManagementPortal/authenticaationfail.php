@@ -27,6 +27,7 @@
 				<form method="post" action="php/authentication.php">
 					<div class="mb-3">
 						<label for="exampleInputEmail1" class="form-label">Token</label>
+						<p id="error">Incorrect Credentials. Please Try again</p>
 						<input type="text" name="google_code" class="form-control" id="google_token" aria-describedby="token">
 						<div id="token_hint" class="form-text">Please enter your token from the google authenticator app</div>
 					</div>

@@ -13,7 +13,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 		<nav class="navbar sticky-top navbar-expand-lg">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="index.html">Lahebo</a>
+				<a class="navbar-brand" href="../index.html">Lahebo</a>
 			</div>
 		</nav> 
 		<br>
@@ -23,7 +23,7 @@
       		<div class="row d-flex justify-content-center">
 				<form method="post" action="php/authentication.php">
 					<div class="mb-3">
-						<label for="exampleInputEmail1" class="form-label">Token</label>
+						<h4 for="exampleInputEmail1" class="form-label">Token</h4>
 						<input type="text" name="google_code" class="form-control" id="google_token" aria-describedby="token">
 						<div id="token_hint" class="form-text">Please enter your token from the google authenticator app</div>
 					</div>

@@ -19,13 +19,13 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			  <div class="navbar-nav">
-			  <div class="d-flex justify-content-between">
-					<a class="nav-link" href="../../Pricing.html" >Pricing</a>
-					<a class="nav-link" href="../../FAQ.html">FAQ</a>
-					<a class="nav-link" href="login.php">Login</a>
-					<a class="nav-link" href="sign_up.html">Sign Up</a>
-					<a class="nav-link" href="../ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
-				</div>
+          <div class="d-flex justify-content-between">
+            <a class="nav-link" href="../../Pricing.html" >Pricing</a>
+            <a class="nav-link" href="../../FAQ.html">FAQ</a>
+            <a class="nav-link" href="../login.php">Login</a>
+            <a class="nav-link" href="../sign_up.html">Sign Up</a>
+			<a class="nav-link" href="../../ManagementPortal/stafflogin.html" id="stafflogin">Staff Login</a>   
+          </div>
 			  </div>
 			</div>
 		  </div>
@@ -42,6 +42,8 @@
 		$txtCompany = $_POST['company'];
 		$txtPayment = $_POST['payment'];
 		$AutoRenew = $_POST['AutoRenew'];
+		$_SESSION['AutoRenew'] = $AutoRenew;
+		$_SESSION['payment'] = $txtPayment;
 
 		if($txtPayment == "yearly" )		{
 			$newDate = date('Y-m-d', strtotime(' + 1 years'));
@@ -51,7 +53,7 @@
 		}
 
 		$sql = "INSERT INTO `customer`(`Full Name`, `Email`, `Password`, `Company`, `Paymentsub`, `Renew`, `Active`, `DateExpiery`, `GoogleCode`)
-							VALUES ('$txtName', '$txtEmail', '$txtPassword', '$txtCompany', '$txtPayment', '$AutoRenew','Active','$newDate', 'null' )";
+							VALUES ('$txtName', '$txtEmail', '$txtPassword', '$txtCompany', '$txtPayment', '$AutoRenew','Deactive','$newDate', 'null' )";
 		
 		// Change active to Inactive once the website is deployed
 		$rs = mysqli_query($con, $sql);
@@ -62,151 +64,10 @@
 		echo "<div class='parent container d-flex justify-content-center align-items-center '>";
 		echo "<div class='row d-flex justify-content-center'>";
 		include('RegisterAuthentication.php'); 
-		
 
-		if ($AutoRenew == "no" && $txtPayment =="yearly"){
-			echo "<table class='table table-striped'>
-				<thead>
-					<tr>
-						<th>Qty</th>
-						<th>Description </th>
-						<th>Auto Renew </th>
-						<th>Time </th>
-					</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>1</td>
-					<td>Lahebo</td>
-					<td>No</td>
-					<td>Yearly</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td colspan='2'>
-					<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
-						<input type='hidden' name='cmd' value='_s-xclick'>
-						<input type='hidden' name='hosted_button_id' value='ERZHP7Z8FGFLS'>
-						<input type='image' src='https://www.paypalobjects.com/en_AU/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal – The safer, easier way to pay online!'>
-						<img alt='' border='0' src='https://www.paypalobjects.com/en_AU/i/scr/pixel.gif' width='1' height='1'>
-					</form>	
-					
-					</td>
-				</tr>
-				</tbody>
-			</table>";
-		}
-
-		else if ($AutoRenew == "no" && $txtPayment =="monthly"){
-			echo "<table class='table table-striped'>
-				<thead>
-					<tr>
-						<th>Qty</th>
-						<th>Description </th>
-						<th>Auto Renew </th>
-						<th>Time </th>
-					</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>1</td>
-					<td>Lahebo</td>
-					<td>No</td>
-					<td>Monthly</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td colspan='2'>
-						<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
-							<input type='hidden' name='cmd' value='_s-xclick'>
-							<input type='hidden' name='hosted_button_id' value='WZEZWA9UDK6LN'>
-							<input type='image' src='https://www.paypalobjects.com/en_AU/i/btn/btn_buynowCC_LG.gif' border='0' name='submit' alt='PayPal – The safer, easier way to pay online!'>
-							<img alt='' border='0' src='https://www.paypalobjects.com/en_AU/i/scr/pixel.gif' width='1' height='1'>
-						</form>
-					</td>
-				</tr>
-				</tbody>
-			</table>";
-
-		}
-
-		else if ($AutoRenew == "yes" && $txtPayment =="yearly") {
-			echo "<table class='table table-striped'>
-				<thead>
-					<tr>
-						<th>Qty</th>
-						<th>Description </th>
-						<th>Auto Renew </th>
-						<th>Time </th>
-					</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>1</td>
-					<td>Lahebo</td>
-					<td>Yes</td>
-					<td>Yearly</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td colspan='2'>
-						<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
-							<input type='hidden' name='cmd' value='_s-xclick'>
-							<input type='hidden' name='hosted_button_id' value='2NLUWW5RYCJG4'>
-							<input type='image' src='https://www.paypalobjects.com/en_AU/i/btn/btn_subscribeCC_LG.gif' border='0' name='submit' alt='PayPal – The safer, easier way to pay online!'>
-							<img alt='' border='0' src='https://www.paypalobjects.com/en_AU/i/scr/pixel.gif' width='1' height='1'>
-						</form>
-						
-					
-					</td>
-				</tr>
-				</tbody>
-			</table>";
-
-		}
-
-		else if ($AutoRenew == "yes" && $txtPayment =="monthly") {
-			echo "<table class='table table-striped'>
-				<thead>
-					<tr>
-						<th>Qty</th>
-						<th>Description </th>
-						<th>Auto Renew </th>
-						<th>Time </th>
-					</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td>1</td>
-					<td>Lahebo</td>
-					<td>Yes</td>
-					<td>Monthly</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td colspan='2'>
-						<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target=_top'>
-							<input type='hidden' name='cmd' value='_s-xclick'>
-							<input type='hidden' name='hosted_button_id' value='K5ML5GWTBATKN'>
-							<input type='image' src='https://www.paypalobjects.com/en_AU/i/btn/btn_subscribeCC_LG.gif' border='0' name='submit' alt='PayPal – The safer, easier way to pay online!'>
-							<img alt='' border='0' src='https://www.paypalobjects.com/en_AU/i/scr/pixel.gif' width='1' height='1'>
-						</form>
-					</td>
-				</tr>
-				</tbody>
-			</table>";
-
-		}
-				
 		echo "</div>";
 		echo "</div>";
-
 		?>
-	</div>
 
 </body>
 </html>

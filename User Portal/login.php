@@ -21,7 +21,7 @@
 			</button>
 			<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
 			  <div class="navbar-nav">
-			  <div class="d-flex justify-content-between">
+				<div class="d-flex justify-content-between">
 					<a class="nav-link" href="../Pricing.html" >Pricing</a>
 					<a class="nav-link" href="../FAQ.html">FAQ</a>
 					<a class="nav-link" href="login.php">Login</a>
@@ -33,6 +33,12 @@
 		  </div>
 	  </nav>
     <br><br>
+	<div hidden>
+		<?php
+			session_start();
+			session_destroy();
+		?>
+	</div>
     <div class="d-flex justify-content-center">
         
       <div class="row d-flex justify-content-center">
@@ -51,5 +57,7 @@
         </form>
       </div>
     </div>
+	
   </body>
 </html>
+

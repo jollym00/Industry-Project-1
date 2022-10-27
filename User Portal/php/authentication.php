@@ -14,6 +14,6 @@
 		header("Location: ../paymentcheck.php");
 	}
 	else {
-		echo "TRY again";
+		header("Location: ../authenticaationfail.php");
 	}
 ?>

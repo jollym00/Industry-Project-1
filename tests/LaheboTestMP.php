@@ -3,6 +3,7 @@ use PHPUnit\Framework\TestCase;
 
 class MyTest extends TestCase
 {
+    //Management logi
     public function test1()
     {
         $dbhost = 'complianceplus.c9xxg5e4cdce.us-east-1.rds.amazonaws.com';
@@ -21,6 +22,7 @@ class MyTest extends TestCase
 
         
     }
+    // Adding new staff
 
     public function test2()
     {
@@ -44,6 +46,7 @@ class MyTest extends TestCase
 
        
     }
+    // Updating legislation
 
     public function test3()
     {
@@ -64,6 +67,7 @@ class MyTest extends TestCase
         $this->assertEquals(1,$count);     
         
     }
+    // Updating client details
 
     public function test4()
     {

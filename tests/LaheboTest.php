@@ -3,6 +3,7 @@ use PHPUnit\Framework\TestCase;
 
 class MyTest extends TestCase
 {
+    // User Login
     public function test1()
     {
         $dbhost = 'complianceplus.c9xxg5e4cdce.us-east-1.rds.amazonaws.com';
@@ -20,7 +21,7 @@ class MyTest extends TestCase
 
         $this->assertEquals(1,$count);
     }
-
+    // User Search legislation
     public function test2()
     {
         $dbhost = 'complianceplus.c9xxg5e4cdce.us-east-1.rds.amazonaws.com';
@@ -44,6 +45,7 @@ class MyTest extends TestCase
 
         $this->assertEquals(202,$count);
     }
+    // User account update
 
     public function test3()
     {
@@ -81,6 +83,7 @@ class MyTest extends TestCase
 
         $this->assertEquals(1,$count);
     }
+    // User subscription
 
     public function test4()
     {
